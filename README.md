@@ -10,7 +10,7 @@ Under the root, folders for different problem sources should be created using lo
 new_source
 ```
 
-In each source folder, create a problem for each folder using lower\_snake\_case, and in that folder, add submission identified by username abbreviation and language used. As an example, say 钟恺健 finished problem 889 in leetcode using Python, then the folder structure would look like this:
+In each source folder, create a folder for each problem using lower\_snake\_case, and in that folder, add submission identified by username abbreviation and language used. As an example, say 钟恺健 finished problem 889 in leetcode using Python, then the folder structure would look like this:
 ```
 root
 └──leetcode
