@@ -1,5 +1,8 @@
 public class wsz_java{
     public int maxProfit(int[] prices) {
+        if (prices.length <= 1){
+            return 0;
+        }
         return bootstrap(prices, 2);
     }
 
