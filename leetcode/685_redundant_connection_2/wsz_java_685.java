@@ -1,4 +1,4 @@
-class wsz_java{
+class wsz_java_685 {
     public int[] findRedundantDirectedConnection(int[][] edges) {
         int l = edges.length, abnormal = -1;
         ArrayList<Integer>[] in_graph = new ArrayList[l+1];

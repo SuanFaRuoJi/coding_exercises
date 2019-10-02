@@ -1,4 +1,13 @@
-public class wsz_java {
+public class wsz_java_889 {
+    class TreeNode{
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int v){
+            val = v;
+        }
+    }
+
     public TreeNode constructFromPrePost(int[] pre, int[] post) {
         int length = pre.length, size = 0;
         if (length == 0){

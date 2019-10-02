@@ -1,10 +1,9 @@
-public class wsz_java{
-    public int maxProfit(int[] prices) {
+public class wsz_java_188 {
+    public int maxProfit(int k, int[] prices) {
         if (prices.length <= 1){
             return 0;
         }
-        /*
-        if (k >= prices.length/2){ // to handle the edge case where k is so large that can sell whenever time sees fit.
+        if (k >= prices.length/2){
             int sum = 0;
             for (int i=1; i<prices.length; i++){
                 int delta = Math.max(0, prices[i] - prices[i-1]);
@@ -12,14 +11,9 @@ public class wsz_java{
             }
             return sum;
         }
-        */
-        return bootstrap(prices, 2);
-    }
-
-    private int bootstrap(int[] prices, int times){
         int l = prices.length;
         int[] accumulate = new int[l];
-        for (int index=0; index<times; index++){
+        for (int index=0; index<k; index++){
             int so_far = accumulate[0], up_to = accumulate[0];
             for (int i=1; i<l; i++){
                 int delta = prices[i] - prices[i-1];

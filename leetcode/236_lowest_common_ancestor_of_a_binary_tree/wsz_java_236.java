@@ -1,4 +1,4 @@
-class wsz_java{
+class wsz_java_236 {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         TreeNode[] stack = new TreeNode[20000];
         int[] stack_l = new int[20000];

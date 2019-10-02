@@ -1,4 +1,4 @@
-class wsz_java{
+class wsz_java_390 {
     public int lastRemaining(int n) {
         int remain = n, head = 1, step = 1, times = 0;
         while(remain != 1){

@@ -1,4 +1,4 @@
-public class wsz_java_2{
+public class wsz_java_236_2 {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null){
             return null;
