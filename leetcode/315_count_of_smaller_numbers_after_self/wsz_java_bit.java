@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class wsz_java_315 {
+public class wsz_java_bit {
     public List<Integer> countSmaller(int[] nums) {
         int l = nums.length, min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
         for (int i=0; i<l; i++){
