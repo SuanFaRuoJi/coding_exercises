@@ -9,7 +9,7 @@ typedef long long ll;
 class Solution {
 public:
     int reversePairs(vector<int>& nums) {
-        int length = nums.size(), sum = 0;
+        int length = nums.size();
         if (length <= 1){
             return 0;
         }
@@ -21,16 +21,16 @@ public:
             transpose.push_back(pair<ll, int>(nums[i], i));
         }
 
-        sort(transpose.begin(), transpose.end(), greater<pair<ll, int>>());
+        sort(transpose.begin(), transpose.end());
         // now it's indices ordered by the value of their entries.
 
-        int i=1, sum=0;
+        int i=length-1, sum=0;
         for (int j=length-1; j>=0; j--){
-            while(i<length && transpose[j].first > transpose[i].first * 2){
+            while(i>=0 && transpose[j].first > transpose[i].first * 2){
                 update(tree, i, 1);
                 // now tree contains all indices whose values * 2 < current index's value, can use Fenwick to check
                 // how many those indices < than current index;
-                i++;
+                i--;
             }
             sum += find(tree, j);
         }
@@ -38,14 +38,14 @@ public:
     }
 
     void update(vector<int>& tree, int key, int delta){
-        for (; key<tree.size(); k+= k & (-k)){
+        for (; key<tree.size(); key+= key & (-key)){
             tree[key] += delta;
         }
     }
 
     int find(vector<int>& tree, int key){
         int sum = 0;
-        for (;key; k-= k & (-k)){
+        for (;key; key-= key & (-key)){
             sum += tree[key];
         }
         return sum;
