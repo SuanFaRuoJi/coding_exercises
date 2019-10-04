@@ -13,26 +13,22 @@ public:
         if (length <= 1){
             return 0;
         }
-        vector<int> tree (length+1);
-
-        // turn (index, value) pair into (value, index) pair for large min-max distance
-        vector<pair<ll, int> > transpose;
+        vector<int> tree (length, 0);
+        vector<pair<long, int> > transpose;
         for (int i=0; i<length; i++){
-            transpose.push_back(pair<ll, int>(nums[i], i));
+            transpose.push_back(pair<long, int>((ll)nums[i], i));
         }
 
-        sort(transpose.begin(), transpose.end());
+        sort(transpose.begin(), transpose.end(), greater<pair<long, int>>());
         // now it's indices ordered by the value of their entries.
 
-        int i=length-1, sum=0;
-        for (int j=length-1; j>=0; j--){
-            while(i>=0 && transpose[j].first > transpose[i].first * 2){
-                update(tree, i, 1);
-                // now tree contains all indices whose values * 2 < current index's value, can use Fenwick to check
-                // how many those indices < than current index;
-                i--;
+        int i=0, sum=0;
+        for (int j=0; j<length; j++){
+            while(i<length && transpose[j].first*2 < transpose[i].first){
+                update(tree, transpose[i].second+1, 1);
+                i++;
             }
-            sum += find(tree, j);
+            sum += find(tree, transpose[j].second);
         }
         return sum;
     }

@@ -14,16 +14,18 @@ public class wsz_java_sort {
         int[] tmp = new int[length];
         int l_it = l, r_it = mid+1, tmp_index = 0;
         // first calculate
-        for (; r_it <= r; r++){
-            while(l_it <= mid){
-                double target = (double)nums[l_it]*2;
-                if (target >= nums[r_it]){
+//System.out.println(l + " " + r);
+        for (; l_it <= mid; l_it++){
+            while(r_it <= r){
+                long target = (long)nums[r_it]*2;
+                if (target >= nums[l_it]){
                     break;
                 }
-                result ++;
+                r_it ++;
             }
+            result += r_it - (mid+1);
         }
-
+//System.out.println("calculated");
         // then merge
         l_it = l;
         r_it = mid+1;
@@ -39,6 +41,7 @@ public class wsz_java_sort {
                 tmp_index ++;
             }
         }
+//System.out.println("Merged");
         System.arraycopy(tmp, 0, nums, l, length);
         return l_result + r_result + result;
     }
