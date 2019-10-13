@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 class wsz_java_685 {
     public int[] findRedundantDirectedConnection(int[][] edges) {
         int l = edges.length, abnormal = -1;
