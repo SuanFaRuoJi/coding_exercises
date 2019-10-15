@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class matrix {
     int[][] raw_matrix;
     int origin_x, origin_y, width, height, actual_w, actual_h;
@@ -132,5 +134,50 @@ public class matrix {
             result.append("\n");
         }
         return result.toString();
+    }
+
+    public static void main(String[] args){
+        Random seed = new Random();
+        int[][] mat1 = new int[50][65];
+        int[][] mat2 = new int[65][65];
+        for (int i=0; i<50; i++){
+            for (int j=0; j<65; j++){
+                mat1[i][j] = seed.nextInt(10000);
+            }
+        }
+        for (int i=0; i<65; i++){
+            for (int j=0; j<65; j++){
+                mat2[i][j] = seed.nextInt(10000);
+            }
+        }
+        int[][] result = new int[50][65];
+        long t1 = System.currentTimeMillis();
+        for (int times = 0; times<10; times++){
+            for(int i=0; i<50; i++){
+                for (int j=0; j<65; j++){
+                    int cur = 0;
+                    for (int k = 0; k<65; k++){
+                        cur += mat1[i][k] * mat2[k][j];
+                    }
+                    result[i][j] = cur;
+                }
+            }
+        }
+        long t1_after = System.currentTimeMillis();
+        System.out.println(t1_after - t1);
+        matrix m1 = new matrix(mat1), m2 = new matrix(mat2), m3 = null;
+        long t2 = System.currentTimeMillis();
+        for (int times = 0; times<10; times++){
+            m3 = m1.multiply(m2);
+        }
+        long t2_after = System.currentTimeMillis();
+        System.out.println(t2_after - t2);
+        System.out.println(m3);
+        for (int i=0; i<50; i++){
+            for (int j=0; j<65; j++){
+                System.out.print(result[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
