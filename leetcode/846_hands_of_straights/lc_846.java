@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class lc_846 {
     public boolean isNStraightHand(int[] hand, int W) {
-        if (hand.length == 0) {
+        if (hand.length == 0 ) {
             return true;
         }
         if (hand.length % W != 0) {
