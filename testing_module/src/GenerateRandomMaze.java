@@ -74,7 +74,7 @@ public class GenerateRandomMaze {
 
     public static void main(String args[]) {
         GenerateRandomMaze test = new GenerateRandomMaze();
-        Scanner input=new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         int n = input.nextInt();
         int[][] ret1 = test.maze(n);
         print2D(ret1);
