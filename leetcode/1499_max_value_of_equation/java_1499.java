@@ -1,34 +1,27 @@
-import java.util.ArrayDeque;
-import java.util.Deque;
-
 public class java_1499 {
     public int findMaxValueOfEquation(int[][] points, int k) {
         int[] pre_calc = new int[points.length];
+        int[] deque = new int[points.length];
+        int left = 0, right = 0;
         int max = Integer.MIN_VALUE;
         for (int i=0; i<points.length; i++) {
             pre_calc[i] = points[i][1] - points[i][0];
         }
-        Deque<Integer> deque = new ArrayDeque<>();
         for (int i=0; i<points.length; i++) {
-            System.out.println(i);
-            int cur = points[i][1] + points[i][0];
-            int cur_val = pre_calc[i];
-
-            while (!deque.isEmpty() && points[i][0] - points[deque.peekFirst()][0] > k) {
-                deque.pollFirst();
+            // pop all unusable elements
+            while (left < right && points[i][0] - points[deque[left]][0] > k) {
+                left ++;
             }
 
-            if (!deque.isEmpty()) {
-                int local = cur + pre_calc[deque.peekFirst()];
-                if (local > max) {
-                    max = local;
-                }
+            // if there is an eligible option, try it with max
+            if (left < right) {
+                max = Math.max(max, points[i][0] + points[i][1] + pre_calc[deque[left]]);
             }
 
-            while (!deque.isEmpty() && pre_calc[deque.peekLast()] < cur_val) {
-                deque.pollLast();
+            while (left < right && pre_calc[i] > pre_calc[deque[right-1]]) {
+                right --;
             }
-            deque.offerLast(i);
+            deque[right++] = i;
         }
         return max;
     }
