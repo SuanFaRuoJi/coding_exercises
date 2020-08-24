@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class chengyou_lc992 {
     public int subarraysWithKDistinct(int[] A, int K) {
         return atMostK(A, K) - atMostK(A, K - 1);
