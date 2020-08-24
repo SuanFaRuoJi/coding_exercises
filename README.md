@@ -2,7 +2,7 @@
 ## Introduction
 This repo is created by 鞠承佑[:email:](mailto:chengyou0421@gmail.com), 钟恺健[:email:](mailto:kzhong.97@gmail.com), 王少泽[:email:](mailto:shaozewxy@gmail.com). It is managed under the account SuanFaRuoji(算法弱鸡)[:email:](mailto:SuanFaRuoJi@gmail.com), which can be accessed by all three creators.
 
-The purpose of this repo is to store and share the coding problems encounter by us so as to imrpove ourselves in coding and problem-solving skills. 
+The purpose of this repo is to store and share the coding problems encounter by us so as to improve ourselves in coding and problem-solving skills. 
 
 ## Naming Conventions
 Under the root, folders for different problem sources should be created using lower\_snake\_case. Folders for leetcode and poj have already been created. Should a new source appear, its folder should look like
