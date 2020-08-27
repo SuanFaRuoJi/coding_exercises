@@ -1,4 +1,4 @@
-public class wsz_java {
+public class wsz_793 {
     public int preimageSizeFZF(int K) {
         int[] pre_calc = new int[13];
         pre_calc[0] = 1;
