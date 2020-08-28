@@ -17,13 +17,14 @@ public class jcy_lc1192 {
 
     private int dfs(Map<Integer, List<Integer>> graph, int curr, int parent, int currTimestamp, int[] timestamps, List<List<Integer>> res) {
         timestamps[curr] = currTimestamp;
-        for (int nextNode : graph.getOrDefault(curr, new ArrayList<Integer>())) {
+        for (int nextNode : graph.getOrDefault(curr, new ArrayList<>())) {
             if (nextNode == parent) continue;
             if (timestamps[nextNode] > 0)
                 timestamps[curr] = Math.min(timestamps[curr], timestamps[nextNode]);
             else
                 timestamps[curr] = Math.min(timestamps[curr], dfs(graph, nextNode, curr, currTimestamp + 1, timestamps, res));
-            if (currTimestamp < timestamps[nextNode]) res.add(Arrays.asList(curr, nextNode));
+            if (currTimestamp < timestamps[nextNode])
+                res.add(Arrays.asList(curr, nextNode));
         }
         return timestamps[curr];
     }
