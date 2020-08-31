@@ -17,8 +17,8 @@ public class jcy_lc127_optimized {
             for (String word : beginSet) {
                 char[] curr = word.toCharArray();
                 for (int i = 0; i < curr.length; i++) {
+                    char prevChar = curr[i];
                     for (char c = 'a'; c <= 'z'; c++) {
-                        char prevChar = curr[i];
                         if (prevChar == c) continue;
                         curr[i] = c;
                         String target = String.valueOf(curr);
@@ -27,8 +27,8 @@ public class jcy_lc127_optimized {
                             temp.add(target);
                             words.remove(target);
                         }
-                        curr[i] = prevChar;
                     }
+                    curr[i] = prevChar;
                 }
             }
             beginSet = temp;
