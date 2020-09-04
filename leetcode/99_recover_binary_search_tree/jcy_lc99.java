@@ -3,7 +3,7 @@ public class jcy_lc99 {
         List<Integer> res = new ArrayList<>();
         inorderTraversal(root, res);
         int[] swapped = findSwappedElements(res);
-        recover(root, swapped[0], swapped[1], 0);
+        recover(root, swapped[0], swapped[1]);
     }
 
     private void inorderTraversal(TreeNode node, List<Integer> res) {
@@ -25,14 +25,11 @@ public class jcy_lc99 {
         return new int[]{res.get(first), res.get(second)};
     }
 
-    private void recover(TreeNode node, int val1, int val2, int numOfSwap) {
+    private void recover(TreeNode node, int val1, int val2) {
         if (node == null) return;
-        if (node.val == val1 || node.val == val2) {
+        if (node.val == val1 || node.val == val2)
             node.val = node.val == val1 ? val2 : val1;
-            numOfSwap += 1;
-            if (numOfSwap == 2) return;
-        }
-        recover(node.left, val1, val2, numOfSwap);
-        recover(node.right, val1, val2, numOfSwap);
+        recover(node.left, val1, val2);
+        recover(node.right, val1, val2);
     }
 }
