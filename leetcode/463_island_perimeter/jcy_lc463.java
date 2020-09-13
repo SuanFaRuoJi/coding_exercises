@@ -5,10 +5,8 @@ public class jcy_lc463 {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] == 1) {
                     res += 4;
-                    if (i > 0 && grid[i - 1][j] == 1) extra += 1;
-                    if (i < m - 1 && grid[i + 1][j] == 1) extra += 1;
-                    if (j > 0 && grid[i][j - 1] == 1) extra += 1;
-                    if (j < n - 1 && grid[i][j + 1] == 1) extra += 1;
+                    if (i > 0 && grid[i - 1][j] == 1) extra += 2;
+                    if (j > 0 && grid[i][j - 1] == 1) extra += 2;
                 }
             }
         }
