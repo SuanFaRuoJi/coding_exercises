@@ -1,4 +1,5 @@
 public class jcy_lc364 {
+    /*
     public int depthSumInverse(List<NestedInteger> nestedList) {
         Queue<NestedInteger> queue = new LinkedList(nestedList);
         int prev = 0, res = 0;
@@ -13,4 +14,5 @@ public class jcy_lc364 {
         }
         return res;
     }
+     */
 }

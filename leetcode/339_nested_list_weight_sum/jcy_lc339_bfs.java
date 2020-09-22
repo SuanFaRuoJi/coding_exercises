@@ -1,4 +1,5 @@
 public class jcy_lc339_bfs {
+    /*
     public int depthSum(List<NestedInteger> nestedList) {
         Queue<NestedInteger> queue = new LinkedList<>();
         for (NestedInteger n : nestedList) queue.add(n);
@@ -18,4 +19,5 @@ public class jcy_lc339_bfs {
         }
         return res;
     }
+     */
 }

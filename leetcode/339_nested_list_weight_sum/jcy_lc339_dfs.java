@@ -1,4 +1,5 @@
 public class jcy_lc339_dfs {
+    /*
     public int depthSum(List<NestedInteger> nestedList) {
         return helper(nestedList, 1);
     }
@@ -11,4 +12,5 @@ public class jcy_lc339_dfs {
         }
         return res;
     }
+     */
 }
