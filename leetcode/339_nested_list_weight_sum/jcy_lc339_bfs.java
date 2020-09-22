@@ -1,4 +1,4 @@
-public class jcy_lc339 {
+public class jcy_lc339_bfs {
     public int depthSum(List<NestedInteger> nestedList) {
         Queue<NestedInteger> queue = new LinkedList<>();
         for (NestedInteger n : nestedList) queue.add(n);
@@ -17,4 +17,5 @@ public class jcy_lc339 {
             depth += 1;
         }
         return res;
+    }
 }
