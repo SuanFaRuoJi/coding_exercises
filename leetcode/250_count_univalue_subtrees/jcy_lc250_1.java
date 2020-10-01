@@ -8,10 +8,6 @@ public class jcy_lc250_1 {
     }
 
     private boolean isUniValue(TreeNode node) {
-        if (node.left == null && node.right == null) {
-            res += 1;
-            return true;
-        }
         boolean isUni = true;
         if (node.left != null)
             isUni = isUniValue(node.left) && isUni && node.val == node.left.val;
