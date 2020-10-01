@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 public class jcy_lc255 {
     public boolean verifyPreorder(int[] preorder) {
         int lowBound = Integer.MIN_VALUE;
