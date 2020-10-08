@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class jcy_lc1608 {
     public int specialArray(int[] nums) {
         Arrays.sort(nums);
