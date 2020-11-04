@@ -1,35 +1,33 @@
 public class wsz_698 {
     public boolean canPartitionKSubsets(int[] nums, int k) {
-        int sum = 0;
-        for(int num: nums) sum+=num;
-        if (nums.length<k || sum%k!=0) return false;
         boolean[] visit = new boolean[nums.length];
-        return backtrack(nums, sum/k, 0, visit, 0, k);
+        int sum = 0;
+        for (int i=0; i<nums.length; i++) {
+            sum += nums[i];
+        }
+        if (sum % k != 0) {
+            return false;
+        }
+        return backtrack(sum/k, k, 0, 0, visit, nums);
     }
 
-    public boolean backtrack(int[] nums, int t, int sum, boolean[] visit, int s, int k) {
-        if (k==1) {
+    private boolean backtrack(int sum, int k, int cur, int start, boolean[] visit, int[] nums) {
+        if (k == 1) {
             return true;
         }
 
-        if (sum>t) {
-            return false;
-        }
-
-        if (sum==t) {
-            return backtrack(nums, t, 0, visit, 0, k-1);
-        }
-
-        for(int i=s; i<nums.length; i++) {
-            if (!visit[i]) {
-                visit[i] = true;
-                if (backtrack(nums, t, sum+nums[i], visit, i+1, k)){
-                    return true;
-                }
-                visit[i] = false;
+        for (int i=start; i<nums.length; i++) {
+            int new_sum = cur + nums[i];
+            if (visit[i] || new_sum > sum) {
+                continue;
             }
+            visit[i] = true;
+            boolean satisfy = new_sum % sum == 0;
+            if (backtrack(sum, satisfy ? k-1 : k, new_sum % sum, satisfy ? 0 : i+1, visit, nums)) {
+                return true;
+            }
+            visit[i] = false;
         }
-
         return false;
     }
 }
