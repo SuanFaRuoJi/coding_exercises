@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class jcy_lc973 {
+public class jcy_lc973_2 {
     public int[][] kClosest(int[][] points, int K) {
         int left = 0, right = points.length - 1;
         while (left <= right) {
@@ -18,18 +18,13 @@ public class jcy_lc973 {
 
     private int partition(int[][] points, int left, int right) {
         int[] pivot = points[right];
-        int i = left;
-        for (int j = left; j <= right; j++) {
-            if (compare(points[j], pivot)) {
-                int[] temp = points[j];
-                points[j] = points[i];
-                points[i] = temp;
-                i += 1;
-            }
+        while (left < right) {
+            while (left < right && compare(points[left], pivot)) left += 1;
+            points[right] = points[left];
+            while (left < right && !compare(points[right], pivot)) right -= 1;
+            points[left] = points[right];
         }
-        int[] temp1 = points[i];
-        points[i] = pivot;
-        points[right] = temp1;
-        return i;
+        points[left] = pivot;
+        return left;
     }
 }
