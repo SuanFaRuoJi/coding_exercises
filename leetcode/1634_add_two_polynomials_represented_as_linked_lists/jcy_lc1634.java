@@ -2,8 +2,8 @@ public class jcy_lc1634 {
     public PolyNode addPoly(PolyNode poly1, PolyNode poly2) {
         PolyNode dummy = new PolyNode(), ptr = dummy;
         while (poly1 != null || poly2 != null) {
-            int e1 = poly1 == null? -1: poly1.power;
-            int e2 = poly2 == null? -1: poly2.power;
+            int e1 = poly1 == null ? -1 : poly1.power;
+            int e2 = poly2 == null ? -1 : poly2.power;
             if (e1 == e2) {
                 int curCoefficient = poly1.coefficient + poly2.coefficient;
                 if (curCoefficient != 0) {
