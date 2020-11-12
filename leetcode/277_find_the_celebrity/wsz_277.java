@@ -3,7 +3,7 @@
 
 public class wsz_277 extends Relation {
     public int findCelebrity(int n) {
-    	boolean[] checked = new boolean[];
+    	boolean[] checked = new boolean[n];
 		int index = 0, check = 1;
 		while (check < n) {
 			if (knows(index, check)) { // current person knows check

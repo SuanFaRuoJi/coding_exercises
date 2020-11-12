@@ -1,4 +1,4 @@
-class Solution {
+class wsz_187 {
 	private static final int mask = ~(3 << 20);
 	private static final int extract = (3 << 18);
 	private static final char[] use = new char[] {'A', 'G', 'C', 'T'};
