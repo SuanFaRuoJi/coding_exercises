@@ -1,3 +1,6 @@
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -7,7 +10,7 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-public class Codec {
+public class wsz_449 {
 
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
