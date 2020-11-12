@@ -1,4 +1,4 @@
-class Solution {
+class wsz_516 {
     public int longestPalindromeSubseq(String s) {
 		int length = s.length();
 		if (length <= 1) {
