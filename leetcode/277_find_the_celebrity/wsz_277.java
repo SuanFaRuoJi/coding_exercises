@@ -1,21 +1,17 @@
 /* The knows API is defined in the parent class Relation.
       boolean knows(int a, int b); */
 
-public class wsz_277 extends Relation {
+public class Solution extends Relation {
     public int findCelebrity(int n) {
-    	boolean[] checked = new boolean[n];
 		int index = 0, check = 1;
 		while (check < n) {
 			if (knows(index, check)) { // current person knows check
-				checked[index] = true;
 				index = check;
-			} else {
-				checked[check] = true;
 			}
 			check ++;
 		}
 		for (int i=0; i<n; i++) {
-			if (i != index && knows(index, i)) {
+			if (i != index && (knows(index, i) || !knows(i, index))) {
 				return -1;
 			}
 		}
