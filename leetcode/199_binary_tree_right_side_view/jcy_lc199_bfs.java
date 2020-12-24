@@ -3,7 +3,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class jcy_lc199 {
+public class jcy_lc199_bfs {
     public List<Integer> rightSideView(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<>();
         List<Integer> res = new ArrayList<>();

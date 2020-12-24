@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class jcy_lc199_2 {
+public class jcy_lc199_dfs {
     List<Integer> res = new ArrayList<>();
 
     public List<Integer> rightSideView(TreeNode root) {
