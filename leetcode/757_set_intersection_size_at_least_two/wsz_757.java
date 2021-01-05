@@ -17,7 +17,8 @@ public class wsz_757 {
                     ans.add(intervals[min_arg][1]);
                 } else {
                     if (count[min_arg] == 1) {
-                        min_arg = 
+                        // SOMETHING MISSING HERE
+                        // min_arg =
                     }
                 }
             }
