@@ -1,7 +1,7 @@
 import java.util.*;
 
-public class jcy_lc332_2 {
-    List<String> res = new ArrayList<>();
+public class jcy_lc332_recursive {
+    LinkedList<String> res = new LinkedList<>();
     Map<String, PriorityQueue<String>> map = new HashMap<>();
 
     public List<String> findItinerary(List<List<String>> tickets) {
@@ -16,6 +16,6 @@ public class jcy_lc332_2 {
     private void helper(String s) {
         PriorityQueue<String> pq = map.get(s);
         while (pq != null && !pq.isEmpty()) helper(pq.poll());
-        res.add(0, s);
+        res.addFirst(s);
     }
 }

@@ -1,12 +1,9 @@
 public class jcy_lc529_dfs {
     public char[][] updateBoard(char[][] board, int[] click) {
         int x = click[0], y = click[1], m = board.length, n = board[0].length;
-        if (board[x][y] == 'M') {
-            board[x][y] = 'X';
-        } else {
-            int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}, {1, 1}, {1, -1}, {-1, 1}, {-1, -1}};
-            dfs(board, x, y, dirs);
-        }
+        int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}, {1, 1}, {1, -1}, {-1, 1}, {-1, -1}};
+        if (board[x][y] == 'M') board[x][y] = 'X';
+        else dfs(board, x, y, dirs);
         return board;
     }
 
@@ -19,13 +16,10 @@ public class jcy_lc529_dfs {
             if (r < 0 || r >= m || c < 0 || c >= n) continue;
             if (board[r][c] == 'M') count += 1;
         }
-        if (count > 0) {
-            board[x][y] = (char)('0' + count);
-        } else {
+        if (count > 0) board[x][y] = (char)('0' + count);
+        else {
             board[x][y] = 'B';
-            for (int[] d : dirs) {
-                dfs(board, x + d[0], y + d[1], dirs);
-            }
+            for (int[] d : dirs) dfs(board, x + d[0], y + d[1], dirs);
         }
     }
 }
