@@ -3,7 +3,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class jcy_lc655 {
+public class jcy_lc655_iterative {
     public List<List<String>> printTree(TreeNode root) {
         List<List<String>> res = new ArrayList<>();
         if (root == null) return res;
