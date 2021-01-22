@@ -1,4 +1,4 @@
-public class chengyou_lc647 {
+public class jcy_lc647 {
     public int countSubstrings(String s) {
         int n = s.length(), res = 0;
         for (int i = 0; i < 2 * n - 1; i++) {

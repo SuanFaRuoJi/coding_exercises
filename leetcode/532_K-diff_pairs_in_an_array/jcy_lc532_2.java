@@ -1,4 +1,6 @@
-public class chengyou_lc532_2 {
+import java.util.Arrays;
+
+public class jcy_lc532_2 {
     public int findPairs(int[] nums, int k) {
         Arrays.sort(nums);
         int res = 0, i = 0, j = 1, n = nums.length;
