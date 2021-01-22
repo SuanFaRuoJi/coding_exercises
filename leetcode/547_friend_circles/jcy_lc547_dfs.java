@@ -1,4 +1,4 @@
-public class chengyou_lc547_dfs {
+public class jcy_lc547_dfs {
     public int findCircleNum(int[][] M) {
         int N = M.length, res = 0;
         int[] visited = new int[N];

@@ -1,4 +1,7 @@
-public class chengyou_lc547_bfs {
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class jcy_lc547_bfs {
     public int findCircleNum(int[][] M) {
         int N = M.length, res = 0;
         int[] visited = new int[N];
@@ -9,10 +12,8 @@ public class chengyou_lc547_bfs {
                 while (!queue.isEmpty()) {
                     int curr = queue.poll();
                     visited[curr] = 1;
-                    for (int j = 0; j < N; j++) {
-                        if (M[curr][j] == 1 && visited[j] == 0)
-                            queue.add(j);
-                    }
+                    for (int j = 0; j < N; j++)
+                        if (M[curr][j] == 1 && visited[j] == 0) queue.add(j);
                 }
                 res += 1;
             }
